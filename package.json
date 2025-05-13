@@ -1,0 +1,41 @@
+{
+  "name": "javierdiaz-homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .", 
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierdiaz-teaches-you-spanish/homepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javierdiaz-teaches-you-spanish/homepage/issues"
+  },
+  "homepage": "https://github.com/javierdiaz-teaches-you-spanish/homepage#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "css-loader": "^7.1.2",
+    "csv-loader": "^3.0.5",
+    "eslint": "^9.26.0",
+    "globals": "^16.1.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
