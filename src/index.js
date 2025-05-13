@@ -1,22 +1,16 @@
-import _ from 'lodash'; 
 import './styles/style-reset.css';
 import './styles/style.css';
 import './styles/style-large.css';
 import './styles/style-medium.css';
-import image from './assets/img/small-img.jpg';
+import { googleFonts } from "./components/google-fonts";
+import { homepage } from "./components/homepage";
 
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const meta = document.createElement('meta');
+meta.setAttribute('name','description');
+meta.setAttribute('content','learning spanish online tutor javier diaz');
 
-    const myIcon = new Image();
-  myIcon.src = image;
+googleFonts();
+homepage();
 
-  element.appendChild(myIcon);
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+document.head.appendChild(meta);
+ 
