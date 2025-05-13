@@ -49,13 +49,13 @@
   article {
     --defining-width: calc(0.75 * (100vw / 2));
     width: var(--defining-width);
-    height: calc(var(--defining-width) * 0.82);
+    height: calc(var(--defining-width) * 2.1);
     border-radius: 6px;
   }
 
   .projectImg {
     width: var(--defining-width);
-    height: calc(var(--defining-width) * 0.7 * 0.7);
+    height: calc(var(--defining-width) * 0.3 * 0.7);
     object-fit: cover;
     border-radius: 6px 6px 0px 0px;
   }

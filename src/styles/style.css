@@ -158,7 +158,7 @@ h2 {
 article {
   --defining-width: calc(0.7 * 100vw);
   width: var(--defining-width);
-  height: calc(var(--defining-width) * 0.9);
+  height: calc(var(--defining-width) * 2.9);
   border-radius: 6px;
   box-shadow: var(--color-article-shadow) 2px 2px 4px 2px;
 }
@@ -166,7 +166,7 @@ article {
 article {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.7fr 0.1fr 0.2fr;
+  grid-template-rows: 0.095fr 0.005fr 0.9fr;
 }
 
 .divImgArticle {
@@ -203,8 +203,10 @@ article {
   grid-column: 1/2;
   grid-row: 3/4;
   display: flex;
-  flex-direction: row;
-  row-gap: 5px;
+  flex-direction: column;
+  justify-content:flex-start;
+  row-gap: 15px;
+  padding-top: 20px;
 }
 
 .divDescriptionArticle > p {
@@ -215,7 +217,7 @@ article {
 
 .projectImg {
   width: var(--defining-width);
-  height: calc(var(--defining-width) * 0.7 * 0.7);
+  height: calc(var(--defining-width) * 0.25 * 0.7);
   object-fit: cover;
   border-radius: 6px 6px 0px 0px;
 }
