@@ -17,6 +17,14 @@ p {
   font-style: normal;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: grid;
+}
+
 .photoImg {
   width: 100%;
   height: 100%;
@@ -87,7 +95,7 @@ article {
 .page-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.7fr 3fr;
+  grid-template-rows: 0.8fr auto-fit;
 }
 
 .page-container > header {
@@ -121,6 +129,8 @@ article {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding-top: 30px;
+  padding-bottom: 15px;
 }
 
 .content {
@@ -155,10 +165,17 @@ h2 {
   position: relative;
 }
 
+fieldset {
+  display:flex;
+  flex-direction: row;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
 article {
   --defining-width: calc(0.7 * 100vw);
   width: var(--defining-width);
-  height: calc(var(--defining-width) * 2.9);
+  height: calc(var(--defining-width) * 2.6);
   border-radius: 6px;
   box-shadow: var(--color-article-shadow) 2px 2px 4px 2px;
 }
@@ -213,6 +230,7 @@ article {
   color: var(--color-base-text-article);
   font-size: 1rem;
   padding-left: 4%;
+  text-justify: distribute;
 }
 
 .projectImg {
@@ -261,7 +279,7 @@ footer > section {
   width: 90%;
   display: grid;
   grid-template-columns: 1fr 1fr 7fr;
-  grid-template-rows: 1fr 1.2fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1.2fr 1.2fr 1fr 0.7fr;
 }
 
 footer > section > h2 {
@@ -277,23 +295,20 @@ footer > section > h2 + p {
 
 footer > section > h2 + p + p {
   grid-row: 3/4;
-  grid-column: 3/4;
+  grid-column: 1/4;
+  row-gap: 1.1;
 }
 
 footer > section > h2 + p + p + p {
-  grid-row: 4, 5;
+  grid-row: 4/5;
   grid-column: 3/4;
 }
 
 footer > section > img {
-  grid-row: 3/4;
-  grid-column: 1/2;
-}
-
-footer > section > img + img {
   grid-row: 4/5;
   grid-column: 1/2;
 }
+
 
 footer > section > div {
   grid-row: 5/6;

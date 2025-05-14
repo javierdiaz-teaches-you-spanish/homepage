@@ -18,7 +18,7 @@
   .page-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.7fr 2.6fr;
+    grid-template-rows: 0.7fr 2fr;
   }
 
   .page-container > header {
@@ -34,10 +34,10 @@
 
   .page-container > main {
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 15px 1fr;
   }
 
   .content {
@@ -51,10 +51,9 @@
     gap: 10px;
   }
 
-  main > H2 {
+  main > fieldset {
     grid-row: 1/2;
-    padding-left: 4%;
-    font-size: 2.5rem;
+    padding-left: 40%;
   }
 
   .contentProject {
@@ -107,13 +106,25 @@
     font-size: 1.3rem;
   }
 
-  footer > section > img {
-    grid-row: 3/4;
-    grid-column: 2/3;
+  footer > section > h2 + p + p{
+    font-size: 1.3rem;
   }
 
-  footer > section > img + img {
+  footer > section > img {
+    grid-row: 4/5;
+    grid-column: 1/2;
+    justify-content: left;
+  }
+
+  footer > section > h2 + p + p + p{
     grid-row: 4/5;
     grid-column: 2/3;
+    justify-content: left;
   }
+
+  footer > section > div {
+    grid-row: 5/6;
+    grid-column: 3/4;
+  }
+
 }

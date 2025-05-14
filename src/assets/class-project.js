@@ -7,7 +7,7 @@ class Project {
     this.projectDescription3 = '';
     this.screenshotProjectSource = '';
     this.linkedinHref = '';
-   /*  this.projectNewWindow = ''; */
+    this.language = '';
   }
 }
 

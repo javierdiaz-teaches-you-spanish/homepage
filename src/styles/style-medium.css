@@ -18,7 +18,7 @@
   .page-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr auto-fit;
   }
 
   .page-container > header {
@@ -78,14 +78,7 @@
     justify-content: center;
   }
 
-  footer > section > img {
-    grid-row: 3/4;
-    grid-column: 2/3;
-  }
-  footer > section > img + img {
-    grid-row: 4/5;
-    grid-column: 2/3;
-  }
+ 
   footer > section > div {
     display: flex;
     flex-direction: row;

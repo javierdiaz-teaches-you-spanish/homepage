@@ -12,14 +12,16 @@ const textContentAboutMe2 =
   'Javier Diaz is a Spanish tutor with more than five years of online teaching experience.';
 
 const textContentContactMe =
-  'Se você acha que meu trabalho se encaixa no que você precisa, escreva para mim.\nIf you think my work fits what you need, write to me.';
-/* const phoneText = '123-4567-890'; */
+  'Se você acha que meu trabalho se encaixa no que você precisa, escreva para mim.';
+const textContentContactMe1 =
+  'If you think my work fits what you need, write to me.';
+
 const mailText = 'jjdiazb2@gmail.com';
 
 const linkedinAccount = 'https://linkedin.com/in/javier-josé-díaz-borboa-33a7682';
 const linkedinAccountTxt = 'linkedin.com/in/javier-josé-díaz-borboa-33a7682';
 
-const project1 = new Project('project1');
+const project1 = new Project('lang1');
 project1.projectName = 'Mais de 5400 aulas para alunos de todo o mundo';
 project1.projectDescription1 =
   'Reconhecido por sua abordagem prática, clareza e dedicação, Javier tem atraído especialmente profissionais brasileiros que buscam melhorar suas oportunidades de trabalho por meio do domínio do idioma espanhol.';
@@ -28,10 +30,10 @@ project1.projectDescription2 =
 project1.projectDescription3 =
   'Seu nível intermediário/avançado de inglês lhe permitiu atrair alunos da Europa e de países de língua inglesa. Ele também possui o certificado "How to Teach a Language" concedido pela Preply em reconhecimento ao seu treinamento em pedagogia de idiomas.';
 project1.screenshotProjectSource = screenshot1;
-project1.linkedinHref = '#';
-/* project1.projectNewWindow = '#'; */
+project1.linkedinHref = '#';  // poner aqui el enlace del certificado de Preply
+project1.language = 'português';
 
-const project2 = new Project('project2');
+const project2 = new Project('lang2');
 project2.projectName = 'More than 5400 lessons to students from all over the world';
 project2.projectDescription1 =
   'Recognized for his practical approach, clarity and dedication, Javier has particularly attracted Brazilian professionals looking to improve their job opportunities by mastering the Spanish language.';
@@ -41,9 +43,9 @@ project2.projectDescription3 =
   'His intermediate/advanced level English proficiency has allowed him to attract students from Europe and English speaking countries. He also has the "How to Teach a Language" certificate awarded by Preply as a support to his language pedagogy training.';
 project2.screenshotProjectSource = screenshot2;
 project2.linkedinHref = '#';
-/* project2.projectNewWindow = '#'; */
+project2.language = 'english';
 
-const project3 = new Project('project3');
+const project3 = new Project('lang3');
 project3.projectName = 'Más de 5400 lecciones para estudiantes de todo el mundo';
 project3.projectDescription1 =
   'Reconocido por su enfoque práctico, claridad y dedicación, Javier ha atraído especialmente a profesionales brasileños que buscan mejorar sus oportunidades laborales dominando el idioma español.';
@@ -53,7 +55,7 @@ project3.projectDescription3 =
   'Su dominio del inglés a nivel intermedio/avanzado le ha permitido atraer a estudiantes de Europa y de países de habla inglesa. Además, cuenta con el certificado "How to Teach a Language" otorgado por Preply como respaldo a su formación en pedagogía lingüística.';
 project3.screenshotProjectSource = screenshot3;
 project3.linkedinHref = '#';
-/* project3.projectNewWindow = '#'; */
+project3.language = 'español';
 
 const arrayProjects = [
   project1,
@@ -68,6 +70,7 @@ export {
   textContentAboutMe2,
   arrayProjects,
   textContentContactMe,
+  textContentContactMe1,
   mailText,
   linkedinAccount,
   linkedinAccountTxt,
