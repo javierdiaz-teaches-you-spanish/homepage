@@ -32,8 +32,8 @@ p {
 }
 
 .photoImgReviews {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 60%;
   object-fit: cover;
 }
 

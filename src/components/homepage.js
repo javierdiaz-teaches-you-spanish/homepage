@@ -239,7 +239,7 @@ function homepage() {
   sourceLargeAndMedium.setAttribute("media", "(min-width: 621px)");
   const mySmallRevImg = new Image();
   mySmallRevImg.src = imgReviewsSmall;
-  photoReviewsImg.setAttribute("src", mySmallRevImg.src);
+  photoReviewsImg.setAttribute("src", myLargeRevImg.src);
   photoReviewsImg.setAttribute("alt", "reviews");
   photoReviewsImg.classList.add("photoImgReviews");
   
