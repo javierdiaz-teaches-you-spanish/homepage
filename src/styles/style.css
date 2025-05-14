@@ -31,6 +31,12 @@ p {
   object-fit: cover;
 }
 
+.photoImgReviews {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .iconImg {
   height: 30px;
   width: auto;
@@ -45,27 +51,27 @@ p {
 
 /* define background colors - starts*/
 .light {
-  --color-bg-first: #f3eded;
-  --color-bg-header: #d9c9c8;
+  --color-bg-first: #f5f8fa;
+  --color-bg-header: #a7c0d2;
   --color-bg-section: white;
-  --color-bg-article: #e3d7d6;
-  --color-article-shadow: #d9c9c8;
-  --color-bg-second: #d9c9c8;
-  --color-base-text-title: #2d2322;
-  --color-base-text: #584644;
-  --color-base-text-article: #2d2322;
+  --color-bg-article: #d0dde7;
+  --color-article-shadow: #a7c0d2;
+  --color-bg-second: #a7c0d2;
+  --color-base-text-title: #2c3e4e;
+  --color-base-text: #31485b;
+  --color-base-text-article: #2c3e4e;
 }
 
 .dark {
-  --color-bg-first: #aa8c89;
-  --color-bg-header: #aa8c89;
-  --color-bg-section: #aa8c89;
-  --color-bg-article: #93726f;
-  --color-article-shadow: #c2a9a7;
-  --color-bg-second: #aa8c89;
-  --color-base-text-title: #f3eded;
-  --color-base-text: #f3eded;
-  --color-base-text-article: #f3eded;
+  --color-bg-first: #37556d;
+  --color-bg-header: #37556d;
+  --color-bg-section: #37556d;
+  --color-bg-article: #31485b;
+  --color-article-shadow: #436986;
+  --color-bg-second: #37556d;
+  --color-base-text-title: #eaeff4;
+  --color-base-text: #eaeff4;
+  --color-base-text-article: #eaeff4;
 }
 
 .bgDivFirst {
@@ -175,9 +181,11 @@ fieldset {
 article {
   --defining-width: calc(0.7 * 100vw);
   width: var(--defining-width);
-  height: calc(var(--defining-width) * 2.6);
+ /*  height: calc(var(--defining-width) * 2.6); */
+  height: fit-content;
   border-radius: 6px;
   box-shadow: var(--color-article-shadow) 2px 2px 4px 2px;
+  padding-bottom: 30px;
 }
 
 article {

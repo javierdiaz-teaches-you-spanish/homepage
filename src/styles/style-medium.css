@@ -8,6 +8,12 @@
     font-size: 4.5rem;
   }
 
+  .photoImgReviews {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+  }
+
   .themeButton {
     position: absolute;
     top: 2%;
@@ -49,8 +55,10 @@
   article {
     --defining-width: calc(0.75 * (100vw / 2));
     width: var(--defining-width);
-    height: calc(var(--defining-width) * 2.1);
+    height: fit-content;
+   /*  height: calc(var(--defining-width) * 2.1); */
     border-radius: 6px;
+    padding-bottom: 30px;
   }
 
   .projectImg {

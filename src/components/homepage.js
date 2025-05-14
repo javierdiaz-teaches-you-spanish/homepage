@@ -1,6 +1,8 @@
 import imageSmall from "../assets/img/small-img.jpg";
 import imageMedium from "../assets/img/medium-img.jpg";
 import imageLarge from "../assets/img/large-img.jpg";
+import imgReviewsLarge from "../assets/img/img-rev-large.png";
+import imgReviewsSmall from "../assets/img/img-rev-small.png";
 import photoFooter from "../assets/img/footer-img.png";
 import changeTheme from "../assets/img/theme-light-dark.png";
 import emailIcon from "../assets/img/email-outline.png";
@@ -228,6 +230,20 @@ function homepage() {
     });
   }
 
+  const photoReviews = document.createElement("picture");
+  const sourceLargeAndMedium = document.createElement("source");
+  const photoReviewsImg = document.createElement("img");
+  const myLargeRevImg = new Image();
+  myLargeRevImg.src = imgReviewsLarge;
+  sourceLargeAndMedium.setAttribute("srcset", myLargeRevImg.src);
+  sourceLargeAndMedium.setAttribute("media", "(min-width: 621px)");
+  const mySmallRevImg = new Image();
+  mySmallRevImg.src = imgReviewsSmall;
+  photoReviewsImg.setAttribute("src", mySmallRevImg.src);
+  photoReviewsImg.setAttribute("alt", "reviews");
+  photoReviewsImg.classList.add("photoImgReviews");
+  
+
   // FOOTER
   const footer = document.createElement("footer");
   const contactMe = document.createElement("section");
@@ -301,7 +317,9 @@ function homepage() {
 
   main.appendChild(selectLanguage);
   main.appendChild(content);
-  
+  content.appendChild(photoReviews);
+  photoReviews.appendChild(sourceLargeAndMedium);
+  photoReviews.appendChild(photoReviewsImg);
 
   footer.appendChild(contactMe);
   footer.appendChild(imgFooter);

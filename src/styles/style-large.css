@@ -4,6 +4,12 @@
     object-fit: cover;
   }
 
+  .photoImgReviews {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+  }
+
   .textInPhoto {
     font-size: 5.6rem;
   }
@@ -37,7 +43,7 @@
     height: 90%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 15px 1fr;
+    grid-template-rows: 25px 1fr;
   }
 
   .content {
@@ -69,8 +75,11 @@
   article {
     --defining-width: calc(0.82 * (100vw / 3));
     width: var(--defining-width);
-    height: calc(var(--defining-width) * 2.3);
-    border-radius: 6px;
+   /*  height: calc(var(--defining-width) * 2.1); */
+   height: fit-content;
+   border-radius: 6px;
+   padding-top: 10px;
+   padding-bottom: 30px;
   }
 
   .projectImg {
