@@ -1,22 +1,10 @@
-import imageSmall from "../assets/img/small-img.jpg";
-import imageMedium from "../assets/img/medium-img.jpg";
-import imageLarge from "../assets/img/large-img.jpg";
 import imgReviewsLarge from "../assets/img/img-rev-large.png";
 import imgReviewsSmall from "../assets/img/img-rev-small.png";
-import photoFooter from "../assets/img/footer-img.png";
 import changeTheme from "../assets/img/theme-light-dark.png";
-import emailIcon from "../assets/img/email-outline.png";
-import {
-  titleAbout1,
-  titleAbout2,
-  textContentAboutMe1,
-  textContentAboutMe2,
-} from "../assets/text-content";
-import { linkedinAccount, linkedinAccountTxt } from "../assets/text-content";
-import { textContentContactMe, textContentContactMe1 ,mailText } from "../assets/text-content";
 import { arrayProjects } from "../assets/text-content";
-import { linkedin } from "../assets/icons-source";
 import { insertImg } from "./insertImg";
+import { footerDiv } from "./footerDiv";
+import { headerDiv } from "./headerDiv";
 
 function homepage() {
   const root = document.documentElement;
@@ -58,59 +46,11 @@ function homepage() {
   const pageContainer = document.createElement("div");
   pageContainer.classList.add("page-container");
 
+  let selectedLang = "lang1";
+  let filteredText = getFilteredText(selectedLang);
+
   // HEADER
-  const header = document.createElement("header");
-  const textInPhoto = document.createElement("H2");
-  textInPhoto.textContent = "Online Tutor";
-  textInPhoto.classList.add("textInPhoto");
-
-  const photoPicture = document.createElement("picture");
-  const sourceLarge = document.createElement("source");
-  const sourceMedium = document.createElement("source");
-  const photoImg = document.createElement("img");
-  const myLargeImg = new Image();
-  myLargeImg.src = imageLarge;
-  sourceLarge.setAttribute("srcset", myLargeImg.src);
-  sourceLarge.setAttribute("media", "(min-width: 981px)");
-  const myMediumImg = new Image();
-  myMediumImg.src = imageMedium;
-  sourceMedium.setAttribute("srcset", myMediumImg.src);
-  sourceMedium.setAttribute("media", "(min-width:621px) and (max-width:980px)");
-  const mySmallImg = new Image();
-  mySmallImg.src = imageSmall;
-  photoImg.setAttribute("src", mySmallImg.src);
-  photoImg.setAttribute("alt", "");
-  photoImg.classList.add("photoImg");
-
-  const aboutMe = document.createElement("section");
-  const aboutMeHeading1 = document.createElement("H2");
-  const aboutMeHeading2 = document.createElement("H2");
-  const aboutMeText1 = document.createElement("p");
-  const aboutMeText2 = document.createElement("p");
-  const aboutMeIcons = document.createElement("div");
-  const linkedinLink = document.createElement("a");
-
-  aboutMe.classList.add("content");
-  aboutMeHeading1.textContent = titleAbout1;
-  aboutMeHeading2.textContent = titleAbout2;
-  aboutMeText1.textContent = textContentAboutMe1;
-  aboutMeText1.classList.add("text");
-  aboutMeText2.textContent = textContentAboutMe2;
-  aboutMeText2.classList.add("text");
-  aboutMeIcons.classList.add("divIcons");
-
-  linkedinLink.setAttribute("href", linkedinAccount);
-  linkedinLink.setAttribute("target", "_blank");
-  const linkedinImg = new Image();
-  linkedinImg.src = linkedin;
-  insertImg(
-    linkedinLink,
-    linkedinImg.src,
-    "Linkedin",
-    "iconImg",
-    "30px",
-    "30px"
-  );
+  headerDiv(pageContainer, filteredText);
 
   // PROJECTS CONTENT
   const main = document.createElement("main");
@@ -139,7 +79,7 @@ function homepage() {
     name.setAttribute("style", "grid-column:1/2");
     const links = document.createElement("div");
     links.setAttribute("style", "grid-column:2/3");
-   
+
     const div3 = document.createElement("div");
     div3.classList.add("divDescriptionArticle");
     const description1 = document.createElement("p");
@@ -203,7 +143,7 @@ function homepage() {
     div.appendChild(input);
   });
 
-  let selectedLang = "lang1";
+
   let allOptions = [];
   arrayProjects.map((e) => {
     allOptions.push(e.id);
@@ -216,8 +156,11 @@ function homepage() {
     if (getSelectedValue != null) {
       selectedLang = getSelectedValue.value;
       displaySelectedText(selectedLang, allOptions);
+      let newText = getFilteredText(selectedLang);
+      updateHeaderText(newText);
+      updateFooterText(newText);
     }
-  }
+  };
 
   function displaySelectedText(selectedLang, allOptions) {
     const rest = allOptions.filter((string) => string !== selectedLang);
@@ -229,6 +172,34 @@ function homepage() {
       hide.className = "hide";
     });
   }
+
+  function getFilteredText(selectedLang) {
+    const [filtered] = arrayProjects.filter((e) => e.id === selectedLang);
+    return filtered;
+  }
+
+  function updateHeaderText(selected) {
+    const t1 = document.getElementById("t1");
+    if (t1) {
+      t1.textContent = selected.titleAbout;
+    }
+    const t2 = document.getElementById("t2");
+    if (t2) {
+      t2.textContent = selected.textContentAboutMe;
+    }
+  };
+
+  function updateFooterText(selected) {
+    const f1 = document.getElementById("f1");
+    if (f1) {
+      f1.textContent = selected.headContactMe;
+    }
+    const f2 = document.getElementById("f2");
+    if (f2) {
+      f2.textContent = selected.textContactMe;
+    }
+  };
+
 
   const photoReviews = document.createElement("picture");
   const sourceLargeAndMedium = document.createElement("source");
@@ -242,56 +213,11 @@ function homepage() {
   photoReviewsImg.setAttribute("src", mySmallRevImg.src);
   photoReviewsImg.setAttribute("alt", "reviews");
   photoReviewsImg.classList.add("photoImgReviews");
-  
+
 
   // FOOTER
-  const footer = document.createElement("footer");
-  const contactMe = document.createElement("section");
-  const contactMeHeading = document.createElement("H2");
-  const contactMeText = document.createElement("p");
-  const contactMeText1 = document.createElement("p");
-  const mailAddress = document.createElement("p");
-  contactMeHeading.textContent = "Contact me";
-  contactMeText.textContent = textContentContactMe;
-  contactMeText1.textContent = textContentContactMe1;
+  footerDiv(bgDivSecond, filteredText);
 
-  mailAddress.textContent = mailText;
- 
-  const emailImg = new Image();
-  emailImg.src = emailIcon;
-  insertImg(
-    contactMe,
-    emailImg.src,
-    "email-address",
-    "iconImg",
-    "30px",
-    "30px"
-  );
-  const contactMeIcons = document.createElement("div");
-
-  const contactMelinkedinLink = document.createElement("a");
-
-  contactMelinkedinLink.setAttribute("href", linkedinAccount);
-  contactMelinkedinLink.setAttribute("target", "_blank");
-  insertImg(
-    contactMelinkedinLink,
-    linkedinImg.src,
-    "Linkedin",
-    "iconImg",
-    "30px",
-    "30px"
-  );
-  const linkedinTxt = document.createElement('p');
-  linkedinTxt.textContent = linkedinAccountTxt;
-
-  const imgFooter = document.createElement("img");
-  const photoJD = new Image();
-  photoJD.src = photoFooter;
-  imgFooter.classList.add("photoFooter");
-  imgFooter.setAttribute("src", photoJD.src);
-  imgFooter.setAttribute("width", "auto");
-  imgFooter.setAttribute("height", "250px");
-  imgFooter.setAttribute("alt", "javier diaz");
 
   document.body.appendChild(flashMessages);
   document.body.appendChild(themeButton);
@@ -299,21 +225,7 @@ function homepage() {
   document.body.appendChild(bgDivSecond);
 
   bgDivFirst.appendChild(pageContainer);
-  bgDivSecond.appendChild(footer);
-  pageContainer.appendChild(header);
   pageContainer.appendChild(main);
-  header.appendChild(photoPicture);
-  header.appendChild(aboutMe);
-  photoPicture.appendChild(sourceLarge);
-  photoPicture.appendChild(sourceMedium);
-  photoPicture.appendChild(photoImg);
-  photoPicture.appendChild(textInPhoto);
-  aboutMe.appendChild(aboutMeHeading1);
-  aboutMe.appendChild(aboutMeText1);
-  aboutMe.appendChild(aboutMeHeading2);
-  aboutMe.appendChild(aboutMeText2);
-  aboutMe.appendChild(aboutMeIcons);
-  aboutMeIcons.appendChild(linkedinLink);
 
   main.appendChild(selectLanguage);
   main.appendChild(content);
@@ -321,15 +233,6 @@ function homepage() {
   photoReviews.appendChild(sourceLargeAndMedium);
   photoReviews.appendChild(photoReviewsImg);
 
-  footer.appendChild(contactMe);
-  footer.appendChild(imgFooter);
-  contactMe.appendChild(contactMeHeading);
-  contactMe.appendChild(contactMeText);
-  contactMe.appendChild(contactMeText1);
-  contactMe.appendChild(mailAddress);
-  contactMe.appendChild(contactMeIcons);
-  contactMeIcons.appendChild(contactMelinkedinLink);
-  contactMeIcons.appendChild(linkedinTxt);
 }
 
 export { homepage };
