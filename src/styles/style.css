@@ -285,42 +285,22 @@ footer {
 footer > section {
   height: 100%;
   width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 7fr;
-  grid-template-rows: 1fr 1.2fr 1.2fr 1fr 0.7fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 footer > section > h2 {
-  grid-row: 1/2;
-  grid-column: 1/4;
+ padding: 1rem;
+ margin: 0 auto;
 }
 
-footer > section > h2 + p {
-  grid-row: 2/3;
-  grid-column: 1/4;
-  row-gap: 1.1;
-}
-
-footer > section > h2 + p + p {
-  grid-row: 3/4;
-  grid-column: 1/4;
-  row-gap: 1.1;
-}
-
-footer > section > h2 + p + p + p {
-  grid-row: 4/5;
-  grid-column: 3/4;
-}
-
-footer > section > img {
-  grid-row: 4/5;
-  grid-column: 1/2;
-}
-
-
-footer > section > div {
-  grid-row: 5/6;
-  grid-column: 1/4;
+footer > section > p {
+ width: 60%;
+ min-width: 200px;
+ max-width: 300px;
+ margin: 0 auto;
+ text-align: justify;
 }
 
 footer > section > div {
@@ -328,6 +308,7 @@ footer > section > div {
   flex-direction: row;
   justify-content: center;
   gap: 10px;
+  padding-top: 2rem;
 }
 
 .photoFooter {
