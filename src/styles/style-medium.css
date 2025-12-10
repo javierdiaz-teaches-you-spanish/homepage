@@ -24,7 +24,7 @@
   .page-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto-fit;
+    grid-template-rows: 1fr fit-content;
   }
 
   .page-container > header {
@@ -56,18 +56,13 @@
     --defining-width: calc(0.75 * (100vw / 2));
     width: var(--defining-width);
     height: fit-content;
-   /*  height: calc(var(--defining-width) * 2.1); */
+    min-width: 350px;
+    max-width: 450px;
     border-radius: 6px;
     padding-bottom: 30px;
   }
 
-  .projectImg {
-    width: var(--defining-width);
-    height: calc(var(--defining-width) * 0.3 * 0.7);
-    object-fit: cover;
-    border-radius: 6px 6px 0px 0px;
-  }
-
+ 
   footer {
     --define-height-footer: calc(0.3 * 100vh);
     width: 100%;

@@ -1,5 +1,3 @@
-import photoFooter from "../assets/img/footer-img.png";
-import { insertImg } from "./insertImg";
 import { linkedinDiv } from "./linkedinDiv";
 import { preplyDiv } from "./preplyDiv";
 
@@ -28,9 +26,6 @@ function footerDiv(parentDiv, selected) {
     contactMe.appendChild(contactMeText);
     contactMe.appendChild(contactMeIcons);
 
-    const photoJD = new Image();
-    photoJD.src = photoFooter;
-    insertImg(footer, photoJD.src, "javier diaz", "photoFooter", "auto", "250px");
 
 };
 

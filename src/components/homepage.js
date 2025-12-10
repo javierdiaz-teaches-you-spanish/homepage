@@ -1,10 +1,10 @@
-import imgReviewsLarge from "../assets/img/img-rev-large.png";
-import imgReviewsSmall from "../assets/img/img-rev-small.png";
+
 import changeTheme from "../assets/img/theme-light-dark.png";
 import { arrayProjects } from "../assets/text-content";
 import { insertImg } from "./insertImg";
 import { footerDiv } from "./footerDiv";
 import { headerDiv } from "./headerDiv";
+import { reviewsDiv } from "./reviews";
 
 function homepage() {
   const root = document.documentElement;
@@ -71,17 +71,17 @@ function homepage() {
     let index = iterator.next().value;
     let x = index[1];
     const div1 = document.createElement("div");
-    div1.classList.add("divImgArticle");
+   /*  div1.classList.add("divImgArticle"); */
     const screenshot = new Image();
     const div2 = document.createElement("div");
-    div2.classList.add("divNameArticle");
+   /*  div2.classList.add("divNameArticle"); */
     const name = document.createElement("h3");
-    name.setAttribute("style", "grid-column:1/2");
+    /* name.setAttribute("style", "grid-column:1/2"); */
     const links = document.createElement("div");
-    links.setAttribute("style", "grid-column:2/3");
+   /*  links.setAttribute("style", "grid-column:2/3"); */
 
     const div3 = document.createElement("div");
-    div3.classList.add("divDescriptionArticle");
+   /*  div3.classList.add("divDescriptionArticle"); */
     const description1 = document.createElement("p");
     const description2 = document.createElement("p");
     const description3 = document.createElement("p");
@@ -201,18 +201,7 @@ function homepage() {
   };
 
 
-  const photoReviews = document.createElement("picture");
-  const sourceLargeAndMedium = document.createElement("source");
-  const photoReviewsImg = document.createElement("img");
-  const myLargeRevImg = new Image();
-  myLargeRevImg.src = imgReviewsLarge;
-  sourceLargeAndMedium.setAttribute("srcset", myLargeRevImg.src);
-  sourceLargeAndMedium.setAttribute("media", "(min-width: 621px)");
-  const mySmallRevImg = new Image();
-  mySmallRevImg.src = imgReviewsSmall;
-  photoReviewsImg.setAttribute("src", mySmallRevImg.src);
-  photoReviewsImg.setAttribute("alt", "reviews");
-  photoReviewsImg.classList.add("photoImgReviews");
+  
 
 
   // FOOTER
@@ -229,9 +218,9 @@ function homepage() {
 
   main.appendChild(selectLanguage);
   main.appendChild(content);
-  content.appendChild(photoReviews);
-  photoReviews.appendChild(sourceLargeAndMedium);
-  photoReviews.appendChild(photoReviewsImg);
+  
+  reviewsDiv(content); 
+ 
 
 }
 

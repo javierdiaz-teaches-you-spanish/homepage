@@ -24,10 +24,10 @@
   .page-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.7fr 2fr;
+    grid-template-rows: 0.7fr fit-content;
   }
 
-  .page-container > header {
+  .page-container>header {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
@@ -38,7 +38,12 @@
     justify-content: center;
   }
 
-  .page-container > main {
+ .page-container>header>section>p {
+    font-size: 1.3rem;
+    max-width: 400px;
+  }
+
+  .page-container>main {
     width: 100%;
     height: 90%;
     display: grid;
@@ -57,7 +62,7 @@
     gap: 10px;
   }
 
-  main > fieldset {
+  main>fieldset {
     grid-row: 1/2;
     padding-left: 40%;
   }
@@ -65,7 +70,7 @@
   .contentProject {
     grid-row: 2/3;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -75,24 +80,15 @@
   article {
     --defining-width: calc(0.82 * (100vw / 3));
     width: var(--defining-width);
-   /*  height: calc(var(--defining-width) * 2.1); */
-   height: fit-content;
-   border-radius: 6px;
-   padding-top: 10px;
-   padding-bottom: 30px;
+    height: fit-content;
+    min-width: 350px;
+    max-width: 450px;
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
 
-  .projectImg {
-    width: var(--defining-width);
-    height: calc(var(--defining-width) * 0.3 * 0.7);
-    object-fit: cover;
-    border-radius: 6px 6px 0px 0px;
-  }
-
-  .divDescriptionArticle > p {
-    padding-top: 3%;
-  }
-
+  
   footer {
     --define-height-footer: calc(0.45 * 100vh);
     width: 100%;
@@ -111,27 +107,27 @@
     justify-content: center;
   }
 
-  footer > section > h2 + p {
+  footer>section>h2+p {
     font-size: 1.3rem;
   }
 
-  footer > section > h2 + p + p{
+  footer>section>h2+p+p {
     font-size: 1.3rem;
   }
 
-  footer > section > img {
+  footer>section>img {
     grid-row: 4/5;
     grid-column: 1/2;
     justify-content: left;
   }
 
-  footer > section > h2 + p + p + p{
+  footer>section>h2+p+p+p {
     grid-row: 4/5;
     grid-column: 2/3;
     justify-content: left;
   }
 
-  footer > section > div {
+  footer>section>div {
     grid-row: 5/6;
     grid-column: 3/4;
   }
