@@ -29,9 +29,6 @@ function description(parentDiv) {
         const description1 = document.createElement("p");
         const description2 = document.createElement("p");
         const description3 = document.createElement("p");
-        description1.className = "parrafos";
-        description2.className = "parrafos";
-        description3.className = "parrafos";
 
         arrayProjects.map((e) => {
             switch (e.id === x.getAttribute("id")) {
@@ -52,19 +49,14 @@ function description(parentDiv) {
         });
 
         x.appendChild(divA);
-        x.appendChild(divB); 
+        x.appendChild(divB);
         x.appendChild(divC);
-        x.appendChild(divD); 
+        x.appendChild(divD);
         divA.appendChild(name);
         divB.appendChild(description1);
         divC.appendChild(description2);
         divD.appendChild(description3);
-
-
     });
-
-
-
 
     parentDiv.appendChild(div);
 

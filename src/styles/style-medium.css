@@ -52,14 +52,28 @@
     justify-content: space-evenly;
   }
 
+  .contentProject > div {
+    width: 50%;
+    min-width: 350px;
+  }
+
   article {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(fit-content, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    row-gap: 40px;
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  .parrafos{
     --defining-width: calc(0.75 * (100vw / 2));
     width: var(--defining-width);
     height: fit-content;
     min-width: 350px;
     max-width: 450px;
     border-radius: 6px;
-    padding-bottom: 30px;
   }
 
  

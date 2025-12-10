@@ -87,15 +87,14 @@ function homepage() {
   });
 
 
-  
+
+  // CHANGE TEXT FUNCTIONALITY
 
   let allOptions = [];
   arrayProjects.map((e) => {
     allOptions.push(e.id);
   });
 
-
-  // CHANGE TEXT FUNCTIONALITY
   function displayRadioValue() {
     let getSelectedValue = document.querySelector(
       'input[name="language"]:checked'
@@ -156,20 +155,14 @@ function homepage() {
   pageContainer.appendChild(main);
   main.appendChild(selectLanguage);
   main.appendChild(content);
-  
 
 
- 
-
-
- 
-  
   // REVIEWS
-  reviewsDiv(content); 
+  reviewsDiv(content);
 
-   // FOOTER
-   footerDiv(bgDivSecond, filteredText);
- 
+  // FOOTER
+  footerDiv(bgDivSecond, filteredText);
+
 
 }
 
