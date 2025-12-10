@@ -5,6 +5,7 @@ import { insertImg } from "./insertImg";
 import { footerDiv } from "./footerDiv";
 import { headerDiv } from "./headerDiv";
 import { reviewsDiv } from "./reviews";
+import { description } from "./descriptionDiv";
 
 function homepage() {
   const root = document.documentElement;
@@ -56,67 +57,9 @@ function homepage() {
   const main = document.createElement("main");
   const content = document.createElement("section");
   content.classList.add("contentProject");
+  description(content);
 
-  for (let i = 0; i < arrayProjects.length; i++) {
-    const project = document.createElement("article");
-    project.setAttribute("id", `lang${i + 1}`);
-    content.appendChild(project);
-  }
-
-  const allProjectsDiv = content.querySelectorAll("article");
-  const projectsInDiv = [...allProjectsDiv];
-  const iterator = projectsInDiv.entries();
-
-  projectsInDiv.forEach(() => {
-    let index = iterator.next().value;
-    let x = index[1];
-    const div1 = document.createElement("div");
-   /*  div1.classList.add("divImgArticle"); */
-    const screenshot = new Image();
-    const div2 = document.createElement("div");
-   /*  div2.classList.add("divNameArticle"); */
-    const name = document.createElement("h3");
-    /* name.setAttribute("style", "grid-column:1/2"); */
-    const links = document.createElement("div");
-   /*  links.setAttribute("style", "grid-column:2/3"); */
-
-    const div3 = document.createElement("div");
-   /*  div3.classList.add("divDescriptionArticle"); */
-    const description1 = document.createElement("p");
-    const description2 = document.createElement("p");
-    const description3 = document.createElement("p");
-
-    arrayProjects.map((e) => {
-      switch (e.id === x.getAttribute("id")) {
-        case true:
-          screenshot.src = e.screenshotProjectSource;
-          insertImg(div1, screenshot.src, "", "projectImg", "30px", "10px");
-          name.textContent = e.projectName;
-          description1.textContent = e.projectDescription1;
-          description2.textContent = e.projectDescription2;
-          description3.textContent = e.projectDescription3;
-          if (x.getAttribute("id") === "lang1") {
-            x.classList.add("show");
-          } else {
-            x.classList.add("hide");
-          }
-          break;
-        case false:
-          break;
-      }
-    });
-
-    x.appendChild(div1);
-    x.appendChild(div2);
-    x.appendChild(div3);
-    div2.appendChild(name);
-    div2.appendChild(links);
-
-    div3.appendChild(description1);
-    div3.appendChild(description2);
-    div3.appendChild(description3);
-  });
-
+  // SELECT LANGUAGE  locate inside main
   const selectLanguage = document.createElement("fieldset");
 
   arrayProjects.map((e) => {
@@ -144,11 +87,15 @@ function homepage() {
   });
 
 
+  
+
   let allOptions = [];
   arrayProjects.map((e) => {
     allOptions.push(e.id);
   });
 
+
+  // CHANGE TEXT FUNCTIONALITY
   function displayRadioValue() {
     let getSelectedValue = document.querySelector(
       'input[name="language"]:checked'
@@ -200,14 +147,6 @@ function homepage() {
     }
   };
 
-
-  
-
-
-  // FOOTER
-  footerDiv(bgDivSecond, filteredText);
-
-
   document.body.appendChild(flashMessages);
   document.body.appendChild(themeButton);
   document.body.appendChild(bgDivFirst);
@@ -215,11 +154,21 @@ function homepage() {
 
   bgDivFirst.appendChild(pageContainer);
   pageContainer.appendChild(main);
-
   main.appendChild(selectLanguage);
   main.appendChild(content);
   
+
+
+ 
+
+
+ 
+  
+  // REVIEWS
   reviewsDiv(content); 
+
+   // FOOTER
+   footerDiv(bgDivSecond, filteredText);
  
 
 }
