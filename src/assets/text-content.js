@@ -1,7 +1,3 @@
-import screenshot1 from './img/screenshot-project1.png';
-import screenshot2 from './img/screenshot-project2.png';
-import screenshot3 from './img/screenshot-project3.png';
-
 import { Project } from './class-project';
 
 
@@ -21,7 +17,6 @@ project1.projectDescription2 =
   'Javier tem mais de 42 avaliações 5 estrelas que comprovam a qualidade de seu ensino. Suas aulas são 100% on-line, flexíveis e personalizadas de acordo com os objetivos e o ritmo de cada aluno. Em contextos profissionais reais, ajudando os alunos a se expressarem com confiança em reuniões, entrevistas e apresentações.';
 project1.projectDescription3 =
   'Seu nível intermediário/avançado de inglês lhe permitiu atrair alunos da Europa e de países de língua inglesa. Ele também possui o certificado "How to Teach a Language" concedido pela Preply em reconhecimento ao seu treinamento em pedagogia de idiomas.';
-project1.screenshotProjectSource = screenshot1;
 project1.language = 'português';
 
 const project2 = new Project('lang2');
@@ -36,7 +31,6 @@ project2.projectDescription2 =
   'Javier has more than 42 reviews of 5 stars that endorse the quality of his teaching. His classes are 100% online, flexible, and personalized according to the goals and pace of each student. Within real professional contexts, helping students to express themselves confidently in meetings, interviews and presentations.';
 project2.projectDescription3 =
   'His intermediate/advanced level English proficiency has allowed him to attract students from Europe and English speaking countries. He also has the "How to Teach a Language" certificate awarded by Preply as a support to his language pedagogy training.';
-project2.screenshotProjectSource = screenshot2;
 project2.language = 'english';
 
 const project3 = new Project('lang3');
@@ -51,7 +45,6 @@ project3.projectDescription2 =
   'Javier tiene más de 42 reseñas de 5 estrellas que demuestran la calidad de su enseñanza. Sus clases son 100% online, flexibles y personalizadas según los objetivos y el ritmo de cada alumno. En contextos profesionales reales, ayudando a los estudiantes a expresarse con confianza en reuniones, entrevistas y presentaciones.';
 project3.projectDescription3 =
   'Su dominio del inglés a nivel intermedio/avanzado le ha permitido atraer a estudiantes de Europa y de países de habla inglesa. Además, cuenta con el certificado "How to Teach a Language" otorgado por Preply como respaldo a su formación en pedagogía lingüística.';
-project3.screenshotProjectSource = screenshot3;
 project3.language = 'español';
 
 const arrayProjects = [
