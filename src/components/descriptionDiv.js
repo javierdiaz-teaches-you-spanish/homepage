@@ -41,7 +41,7 @@ function description(parentDiv) {
                     description3a.textContent = e.projectDescription3a;
                     description3a.insertAdjacentHTML(
                         "beforeend",
-                        `<span><a id='certificate' href='${certificate}'> How to to Teach a Language</a>, ${e.projectDescription3b}</span>`
+                        `<span><a id='certificate' href='${certificate}'> How to Teach a Language</a>, ${e.projectDescription3b}</span>`
                     );
                   
                     if (x.getAttribute("id") === "lang1") {
