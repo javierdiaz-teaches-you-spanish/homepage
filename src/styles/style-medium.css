@@ -50,12 +50,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-left: 5%;
   }
 
   .contentProject > div {
     width: 50%;
     min-width: 350px;
+    align-self: center;
   }
+
 
   article {
     width: 100%;

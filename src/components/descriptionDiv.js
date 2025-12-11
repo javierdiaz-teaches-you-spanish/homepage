@@ -1,4 +1,4 @@
-import { arrayProjects } from "../assets/text-content";
+import { arrayProjects, certificate } from "../assets/text-content";
 
 function description(parentDiv) {
 
@@ -25,18 +25,25 @@ function description(parentDiv) {
         divC.className = "parrafos";
         const divD = document.createElement('div');
         divD.className = "parrafos";
+
         const name = document.createElement("h3");
         const description1 = document.createElement("p");
         const description2 = document.createElement("p");
-        const description3 = document.createElement("p");
-
+        const description3a = document.createElement("p");
+    
         arrayProjects.map((e) => {
             switch (e.id === x.getAttribute("id")) {
                 case true:
                     name.textContent = e.projectName;
                     description1.textContent = e.projectDescription1;
                     description2.textContent = e.projectDescription2;
-                    description3.textContent = e.projectDescription3;
+
+                    description3a.textContent = e.projectDescription3a;
+                    description3a.insertAdjacentHTML(
+                        "beforeend",
+                        `<span><a id='certificate' href='${certificate}'> How to to Teach a Language</a>, ${e.projectDescription3b}</span>`
+                    );
+                  
                     if (x.getAttribute("id") === "lang1") {
                         x.classList.add("show");
                     } else {
@@ -55,7 +62,10 @@ function description(parentDiv) {
         divA.appendChild(name);
         divB.appendChild(description1);
         divC.appendChild(description2);
-        divD.appendChild(description3);
+        divD.appendChild(description3a);
+
+
+
     });
 
     parentDiv.appendChild(div);
@@ -63,3 +73,4 @@ function description(parentDiv) {
 }
 
 export { description };
+

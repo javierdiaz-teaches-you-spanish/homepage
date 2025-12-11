@@ -8,8 +8,8 @@ class Project {
     this.projectName = '';
     this.projectDescription1 = '';
     this.projectDescription2 = '';
-    this.projectDescription3 = '';
-    this.screenshotProjectSource = '';
+    this.projectDescription3a = '';
+    this.projectDescription3b = '';
     this.language = '';
   }
 }

@@ -60,6 +60,7 @@ p {
   --color-base-text-title: #2c3e4e;
   --color-base-text: #31485b;
   --color-base-text-article: #2c3e4e;
+  --color-text-in-link: blue;
 }
 
 .dark {
@@ -72,6 +73,7 @@ p {
   --color-base-text-title: #eaeff4;
   --color-base-text: #eaeff4;
   --color-base-text-article: #eaeff4;
+  --color-text-in-link: lightpink;
 }
 
 .bgDivFirst {
@@ -284,6 +286,9 @@ footer > section > div {
 }
 
 a {
+  text-decoration: none;
+  font-style: italic;
+  color: var(--color-text-in-link);
   transition: transform 250ms ease-in-out;
 }
 
