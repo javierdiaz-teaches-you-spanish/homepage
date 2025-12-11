@@ -38,18 +38,18 @@
     justify-content: center;
   }
 
- .page-container>header>section>p {
+  .page-container>header>section>p {
     font-size: 1.3rem;
     max-width: 400px;
   }
 
- .page-container>main {
+  .page-container>main {
     width: 100%;
     height: 90%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 25px 1fr;
-  } 
+  }
 
   .content {
     justify-content: center;
@@ -79,22 +79,16 @@
     margin-left: 5%;
   }
 
-  .contentProject > div {
-    width: 50%;
-    min-width: 350px;
-    align-self: center;
-  }
-
   article {
     width: 100%;
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(fit-content, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     row-gap: 40px;
     column-gap: 20px;
     align-items: center;
   }
- 
+
   .parrafos {
     --defining-width: calc(0.82 * (100vw / 2));
     width: var(--defining-width);
@@ -104,10 +98,12 @@
     border-radius: 6px;
   }
 
-  .text, .parrafos >p,  .parrafos > h3 {
+  .text,
+  .parrafos>p,
+  .parrafos>h3 {
     padding: 7%;
   }
-  
+
   footer {
     --define-height-footer: calc(0.45 * 100vh);
     width: 100%;
